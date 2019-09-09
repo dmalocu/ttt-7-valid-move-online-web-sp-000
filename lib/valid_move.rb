@@ -1,28 +1,13 @@
+ttt_board = ["","X"," "," "," "," "," "," "," "]
+user_input = gets.chomp
+number_entered = user_input.to_i - 1
 
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-def valid_move?(board, index)
-  if empty_board?(board, index) && user_input.between?(0,8)
-    return true 
-  elsif non_empty_board?(board, index) && user_input.between?(0,8)
-    return true
-  elsif !(user_input.between?(0,8))
-    return false 
-  end
+def valid_move?(number_entered, board)
+  number_entered.between?(0, 8) && !(position_taken?(board, number_entered))
 end
 
-def empty_board?(board, index)
-  if board[index] == "" || board[index] == " " || board[index] == nil
-    return true
-  else 
-    return false 
-  end
+def position_taken?(board, index)
+ !(board[index] == " " || board[index] == "" || board[index] == nil)
 end
 
-def non_empty_board?(board, index)
-  if !(board[index] == "" || board[index] == " " || board[index] == nil)
-    return true 
-  else 
-    return false 
-  end
-end
+valid_move?(number_entered, ttt_board)
