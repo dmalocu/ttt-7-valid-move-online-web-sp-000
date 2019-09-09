@@ -8,6 +8,7 @@ def valid_move?(board, index)
     return true
   elsif !(user_input.between?(0,8))
     return false 
+  end
 end
 
 def empty_board?(board, index)
