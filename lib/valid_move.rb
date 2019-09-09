@@ -1,11 +1,3 @@
-#valid move , non empty
-#not valid , empty 
-
-
-
-
-#valid move , empty 
-#not valid , non empty
 
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
